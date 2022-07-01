@@ -1,0 +1,15 @@
+version: "3"
+services:
+  web:
+    build:  
+      dockerfile: ./Dockerfile
+      context: .
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      # Set these variables in your .env file
+      - WEBAPP_UPSTREAM_SERVER=$WEBAPP_UPSTREAM_SERVER
+      - WEBAPP_SERVER_NAME=$WEBAPP_SERVER_NAME
+      - API_UPSTREAM_SERVER=$API_UPSTREAM_SERVER
+      - API_SERVER_NAME=$API_SERVER_NAME
