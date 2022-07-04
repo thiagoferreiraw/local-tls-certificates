@@ -38,6 +38,21 @@ Make sure to open the certificate on the keychain, expand the Trust tab and clic
 
 Copy the file `.env.example` to `.env` and replace the variables with the desired values.
 
+## Configuring hosts file
+
+We need to skip DNS lookup and point the domains directly to our localhost. To do so, edit your /etc/hosts file:
+
+```
+$ sudo vim /etc/hosts
+```
+
+And add the custom domains pointing to localhost:
+
+```
+127.0.0.1 web-domain.example.com
+127.0.0.1 api-domain.example.com
+```
+
 ## Running nginx reverse proxy
 
 ```
